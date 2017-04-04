@@ -1,0 +1,45 @@
+{
+  "name": "react-numberplace",
+  "version": "1.0.0",
+  "description": "React Component of Numberplace (Game)",
+  "main": "lib",
+  "scripts": {
+    "test": "mocha",
+    "dev": "webpack-dev-server --content-base docs/ --config webpack.config.demo.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FujiHaruka/react-numberplace.git"
+  },
+  "keywords": [
+    "React",
+    "Sudoku",
+    "Numberplace"
+  ],
+  "author": "Fuji Haruka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/FujiHaruka/react-numberplace/issues"
+  },
+  "homepage": "https://github.com/FujiHaruka/react-numberplace#readme",
+  "devDependencies": {
+    "autoprefixer": "^6.7.4",
+    "babel-core": "^6.23.1",
+    "babel-loader": "7",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-es2015": "^6.24.0",
+    "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-3": "^6.22.0",
+    "classnames": "^2.2.5",
+    "css-loader": "^0.27.3",
+    "immutable": "^3.8.1",
+    "lodash": "^4.17.4",
+    "postcss-loader": "^1.3.1",
+    "react": "^15.4.2",
+    "react-autobind": "^1.0.6",
+    "react-dom": "^15.4.2",
+    "style-loader": "^0.14.1",
+    "webpack": "^2.3.2",
+    "webpack-dev-server": "^2.4.2"
+  }
+}

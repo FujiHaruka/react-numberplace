@@ -1,0 +1,39 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', '游ゴシック  Medium', meiryo, sans-serif;
+  background-color: white;
+  color: #666;
+}
+
+h1, h2, h3, h4, h5 {
+  font-weight: 100;
+}
+
+#site {
+  height: 100%;
+}
+
+.title {
+  padding-left: 1em;
+}
+
+.wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2em .5em;
+  box-sizing: border-box;
+}
+
+.content {
+  max-width: 700px;
+  width: 100%;
+  padding: 1em;
+  border-radius: 4px;
+  box-shadow: 1px 1px 1px 1px #aaa;
+}
