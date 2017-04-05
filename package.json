@@ -4,7 +4,7 @@
   "description": "React Component of Numberplace (Game)",
   "main": "lib",
   "scripts": {
-    "test": "mocha",
+    "test": "mocha --recursive --compilers js:babel-core/register",
     "dev": "webpack-dev-server --content-base docs/ --config webpack.config.demo.js"
   },
   "repository": {
@@ -41,5 +41,6 @@
     "style-loader": "^0.14.1",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
-  }
+  },
+  "dependencies": {}
 }
