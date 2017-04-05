@@ -12,10 +12,11 @@ class Numberplace extends React.Component {
     let {
       gameData
     } = props
-    if (!gameData || gameData.every(arr => arr.every(n => typeof n === 'number'))) {
+    if (!gameData || !gameData.every(arr => arr.every(n => typeof n === 'number'))) {
       throw new Error('props "gameData" is required in Numberplace.')
     }
     autoBind(this)
+    exposeSetState(this)
     this.state = Numberplace.getInitialState(props)
   }
 
@@ -25,10 +26,6 @@ class Numberplace extends React.Component {
 
   componentWillUnmount () {
     cancelState()
-  }
-
-  componentDidMount () {
-    exposeSetState(this)
   }
 
   render () {
@@ -44,9 +41,10 @@ class Numberplace extends React.Component {
 Numberplace.getInitialState = ({ gameData }) => ({
   gameData,
   focusedCell: false,
+  focusedNumber: 0,
   mode: Mode.ANSWER,
-  cellNumers: new CellState(gameData),
-  annoNumbers: new AnnoState(),
+  cellState: new CellState(gameData),
+  annoState: new AnnoState(),
   fixedCell: new FixedCell(gameData)
 })
 
