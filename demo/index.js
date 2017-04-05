@@ -8,7 +8,7 @@ const gameData = []
 for (let i = 0; i < 9; i++) {
   for (let j = 0; j < 9; j++) {
     gameData[i] = gameData[i] || []
-    gameData[i][j] = gameDataArray[i * 9 + j]
+    gameData[i][j] = Number(gameDataArray[i * 9 + j])
   }
 }
 
