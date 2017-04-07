@@ -1,5 +1,5 @@
 .wrap {
   display: flex;
   flex-wrap: wrap;
-  width: 13.5em
+  width: calc(13.5em + 6px);
 }

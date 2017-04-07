@@ -1,0 +1,21 @@
+.numberButton {
+  font-size: 0.9em;
+  width: 1.2em;
+  height: 1.2em;
+  line-height: 1.2em;
+  text-align: center;
+  border-radius: 50%;
+  border: 1px solid #644dbe;
+  color: #644dbe;
+  cursor: pointer;
+  user-select: none;
+}
+
+.numberButton:hover {
+  border: 1px solid #5541a3;
+  color: #5541a3;
+}
+
+.numberButton:active {
+  color: #42327e;
+}
