@@ -43,6 +43,12 @@
   background-color: rgba(150,137,57,0.1);
 }
 
+.annoActiveColor {
+  color: white;
+  background-color: rgb(190,147,77);
+  border: 1px solid rgb(190,147,77);
+}
+
 .action {
   font-size: 0.7em;
   width: 4em;

@@ -2,11 +2,15 @@ import React from 'react'
 import c from 'classnames'
 import styles from '../../styles/buttons.css'
 import { getState, setState } from '../../state_exposer'
+import { Mode } from '../../constants'
 import _ from 'lodash'
 
-const NumberButton = ({ number, annoMode }) =>
+const NumberButton = ({ number, mode }) =>
   <div
-    className={c(styles.number, annoMode ? styles.annoColor : styles.nomalColor)}
+    className={c(
+      styles.number,
+      mode === Mode.ANNOTATION ? styles.annoColor : styles.nomalColor
+    )}
     onClick={() => {
       let {
         cellState,
