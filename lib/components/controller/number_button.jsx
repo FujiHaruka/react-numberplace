@@ -5,27 +5,49 @@ import { getState, setState } from '../../state_exposer'
 import { Mode } from '../../constants'
 import _ from 'lodash'
 
+const updateAnswer = (number) => () => {
+  let {
+    cellState,
+    focusedCell
+  } = getState()
+  if (_.isEmpty(focusedCell)) {
+    return
+  }
+  setState({
+    cellState: cellState.update({
+      value: number,
+      ...focusedCell
+    })
+  })
+}
+
+const updateAnno = (number) => () => {
+  let {
+    annoState,
+    focusedCell
+  } = getState()
+  if (_.isEmpty(focusedCell)) {
+    return
+  }
+  setState({
+    annoState: annoState.add({
+      value: number,
+      ...focusedCell
+    })
+  })
+}
+
 const NumberButton = ({ number, mode }) =>
   <div
     className={c(
       styles.number,
-      mode === Mode.ANNOTATION ? styles.annoColor : styles.nomalColor
+      mode === Mode.ANSWER ? styles.nomalColor : styles.annoColor
     )}
-    onClick={() => {
-      let {
-        cellState,
-        focusedCell
-      } = getState()
-      if (_.isEmpty(focusedCell)) {
-        return
-      }
-      setState({
-        cellState: cellState.update({
-          value: number,
-          ...focusedCell
-        })
-      })
-    }}
+    onClick={
+      mode === Mode.ANSWER
+      ? updateAnswer(number)
+      : updateAnno(number)
+    }
     >
     { number }
   </div>

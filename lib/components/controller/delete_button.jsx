@@ -1,7 +1,7 @@
 import React from 'react'
 import c from 'classnames'
 import styles from '../../styles/buttons.css'
-import { getState, setState }  from '../../state_exposer'
+import { getState, setState } from '../../state_exposer'
 import _ from 'lodash'
 
 const DeleteButton = () =>
@@ -10,6 +10,7 @@ const DeleteButton = () =>
     onClick={() => {
       let {
         cellState,
+        annoState,
         focusedCell
       } = getState()
       if (_.isEmpty(focusedCell)) {
@@ -18,6 +19,9 @@ const DeleteButton = () =>
       setState({
         cellState: cellState.update({
           value: 0,
+          ...focusedCell
+        }),
+        annoState: annoState.clear({
           ...focusedCell
         })
       })
