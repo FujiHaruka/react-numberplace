@@ -1,9 +1,9 @@
 import React from 'react'
-import { getState } from '../state_exposer'
-import { Mode } from '../constants'
+import { getState } from '../../state_exposer'
+import { Mode } from '../../constants'
 import Annotation from './annotation'
-import styles from '../styles/cell.css'
-import Table from './misc/table'
+import styles from '../../styles/cell.css'
+import Table from '../misc/table'
 
 const Cell = ({ sectionIdx, cellIdx }) => {
   let {

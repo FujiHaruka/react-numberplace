@@ -5,6 +5,7 @@ import { exposeSetState, cancelState } from './state_exposer'
 import autoBind from 'react-autobind'
 import { Mode } from './constants'
 import { CellState, AnnoState, FixedCell } from './states'
+import styles from './styles/numberplace.css'
 
 class Numberplace extends React.Component {
   constructor (props) {
@@ -30,7 +31,7 @@ class Numberplace extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className={styles.wrap}>
         <Board />
         <Controller />
       </div>
