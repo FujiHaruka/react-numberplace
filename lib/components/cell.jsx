@@ -3,35 +3,7 @@ import { getState } from '../state_exposer'
 import { Mode } from '../constants'
 import Annotation from './annotation'
 import styles from '../styles/cell.css'
-import { Range } from 'immutable'
-
-const annoArr = annos => annos.toJS().reduce((arr, value) => {
-  arr[value - 1] = value
-  return arr
-}, Range(0, 9).toJS())
-
-const renderAnnos = annos => {
-  let arr = annoArr(annos)
-  return (
-    <div className={styles.annoWrap}>
-      <div className={styles.row}>
-        {arr.slice(0, 3).map(value =>
-          <Annotation value={value} />
-        )}
-      </div>
-      <div className={styles.row}>
-        {arr.slice(3, 6).map(value =>
-          <Annotation value={value} />
-        )}
-      </div>
-      <div className={styles.row}>
-        {arr.slice(6, 9).map(value =>
-          <Annotation value={value} />
-        )}
-      </div>
-    </div>
-  )
-}
+import Table from './misc/table'
 
 const Cell = ({ sectionIdx, cellIdx }) => {
   let {
@@ -48,7 +20,13 @@ const Cell = ({ sectionIdx, cellIdx }) => {
       {
         number > 0
         ? number
-        : renderAnnos(annos)
+        : <Table
+          wrapClass={styles.annoWrap}
+          rowClass={styles.row}
+          cellHandler={(i) =>
+            <Annotation key={i} value={annos.has(i + 1) ? i + 1 : null} />
+            }
+          />
       }
     </div>
   )
