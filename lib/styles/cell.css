@@ -18,3 +18,11 @@
   display: flex;
   flex-wrap: nowrap;
 }
+
+.fixed {
+  font-weight: 700;
+}
+
+.focused {
+  background-color: rgba(82,63,159,0.1);
+}

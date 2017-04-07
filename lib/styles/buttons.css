@@ -1,8 +1,8 @@
-.numberButton {
+.number {
   font-size: 0.9em;
-  width: 1.2em;
-  height: 1.2em;
-  line-height: 1.2em;
+  width: 1.3em;
+  height: 1.3em;
+  line-height: 1.3em;
   text-align: center;
   border-radius: 50%;
   border: 1px solid #644dbe;
@@ -11,11 +11,36 @@
   user-select: none;
 }
 
-.numberButton:hover {
-  border: 1px solid #5541a3;
-  color: #5541a3;
+.numberNomal {
+  color: rgb(100,77,190);
+  border: 1px solid rgb(100,77,190);
 }
 
-.numberButton:active {
-  color: #42327e;
+.numberNomal:hover {
+  color: rgb(82,63,159);
+  border: 1px solid rgb(82,63,159);
+  background-color: rgba(82,63,159,0.05);
+}
+
+.numberNomal:active {
+  color: rgb(69,53,134);
+  border: 1px solid rgb(69,53,134);
+  background-color: rgba(69,53,134,0.1);
+}
+
+.numberAnno {
+  color: rgb(190,147,77);
+  border: 1px solid rgb(190,147,77);
+}
+
+.numberAnno:hover {
+  color: rgb(170,157,67);
+  border: 1px solid rgb(170,157,67);
+  background-color: rgba(170,157,67,0.05);
+}
+
+.numberAnno:active {
+  color: rgb(150,137,57);
+  border: 1px solid rgb(150,137,57);
+  background-color: rgba(150,137,57,0.1);
 }

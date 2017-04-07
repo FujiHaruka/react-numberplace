@@ -41,7 +41,7 @@ class Numberplace extends React.Component {
 
 Numberplace.getInitialState = ({ gameData }) => ({
   gameData,
-  focusedCell: false,
+  focusedCell: {},
   focusedNumber: 0,
   mode: Mode.ANSWER,
   cellState: new CellState(gameData),
