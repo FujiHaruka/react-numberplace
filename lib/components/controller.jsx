@@ -13,18 +13,18 @@ class Controller extends React.Component {
   render () {
     return (
       <div className={styles.wrap}>
-        <div className={styles.numbers}>
+        <div className={styles.buttons}>
           {
             numbers.map(number =>
               <NumberButton number={number} key={number} />
             )
           }
         </div>
-        <div>
+        <div className={styles.buttons}>
           <UndoButton />
           <HintButton />
-          <AnnoButton />
           <DeleteButton />
+          <AnnoButton />
         </div>
       </div>
     )

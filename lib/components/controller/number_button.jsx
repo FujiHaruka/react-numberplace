@@ -6,7 +6,7 @@ import _ from 'lodash'
 
 const NumberButton = ({ number, annoMode }) =>
   <div
-    className={c(styles.number, annoMode ? styles.numberAnno : styles.numberNomal)}
+    className={c(styles.number, annoMode ? styles.annoColor : styles.nomalColor)}
     onClick={() => {
       let {
         cellState,
