@@ -19,7 +19,8 @@ h1, h2, h3, h4, h5 {
 }
 
 .title {
-  padding-left: 1em;
+  margin: 0;
+  padding: 1em;
 }
 
 .wrap {

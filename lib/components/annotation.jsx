@@ -1,13 +1,9 @@
 import React from 'react'
+import styles from '../styles/annotation.css'
 
-class Annotation extends React.Component {
-  render () {
-    return (
-      <div>
-        hoge
-      </div>
-    )
-  }
-}
+const Annotation = ({ value }) =>
+  <div className={styles.wrap}>
+    { value }
+  </div>
 
 export default Annotation

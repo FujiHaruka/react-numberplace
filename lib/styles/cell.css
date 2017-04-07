@@ -1,0 +1,20 @@
+.wrap {
+  width: 1.5em;
+  height: 1.5em;
+  line-height: 1.5em;
+  box-sizing: border-box;
+  border-collapse: collapse;
+  border-left: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
+  text-align: center;
+}
+
+.annoWrap {
+  width: 100%;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}

@@ -1,0 +1,13 @@
+.wrap {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  border-right: 1px solid #aaa;
+  border-collapse: collapse;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+}
