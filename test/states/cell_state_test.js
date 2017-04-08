@@ -3,15 +3,25 @@ import { locationFrom } from '../../lib/helpers/location_accessor'
 import { Range } from 'immutable'
 import { equal, notEqual } from 'assert'
 
-const DATA = '400015000000060000085300000070030004200090005000602003003050209000041306901000000'
-const gameDataArray = DATA.split('')
-const gameData = []
-for (let i = 0; i < 9; i++) {
-  for (let j = 0; j < 9; j++) {
-    gameData[i] = gameData[i] || []
-    gameData[i][j] = gameDataArray[i * 9 + j]
+const parseData = (data) => {
+  let array = data.split('')
+  let gameData = []
+  for (let i = 0; i < 9; i++) {
+    for (let j = 0; j < 9; j++) {
+      gameData[i] = gameData[i] || []
+      gameData[i][j] = array[i * 9 + j]
+    }
   }
+  return gameData
 }
+const DATA = '400015000000060000085300000070030004200090005000602003003050209000041306901000000'
+const DATA2 = '186793452923854671745126938854912763612537849390468215561279384479385126238641597'
+const ANSWER = '186793452923854671745126938854912763612537849397468215561279384479385126238641597'
+const WRONG = '186793452923854671745129938854912763612537849397468215561279384479385126238641597'
+const gameData = parseData(DATA)
+const gameData2 = parseData(DATA2)
+const answerData = parseData(ANSWER)
+const wrongData = parseData(WRONG)
 
 describe('cell_state', () => {
   it('constructor', () => {
@@ -56,6 +66,18 @@ describe('cell_state', () => {
     let updated = state.update({ value, sectionIdx, cellIdx })
     equal(updated.get({ sectionIdx, cellIdx }), value)
     notEqual(state.get({ sectionIdx, cellIdx }), value)
+  })
+
+  it('isFilled', () => {
+    equal(new CellState(gameData).isFilled(), false)
+    equal(new CellState(gameData2).isFilled(), false)
+    equal(new CellState(answerData).isFilled(), true)
+  })
+
+  it('isFinished', () => {
+    equal(new CellState(answerData).isFinished(), true)
+    equal(new CellState(gameData2).isFinished(), false)
+    equal(new CellState(wrongData).isFinished(), false)
   })
 })
 

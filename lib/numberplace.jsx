@@ -25,6 +25,17 @@ class Numberplace extends React.Component {
     this.setState(Numberplace.getInitialState(nextProps))
   }
 
+  componentDidUpdate (prevProps, prevState) {
+    let { cellState } = this.state
+    if (prevState.cellState === cellState) {
+      return
+    }
+    let isFinished = cellState.isFinished()
+    if (isFinished) {
+      this.props.onFinished()
+    }
+  }
+
   componentWillUnmount () {
     cancelState()
   }

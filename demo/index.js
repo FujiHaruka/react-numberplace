@@ -20,6 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div className='content'>
           <Numberplace
             gameData={gameData}
+            onFinished={() => window.alert('FINISHED')}
           />
         </div>
       </div>
