@@ -3,6 +3,7 @@ import Board from './components/board'
 import Controller from './components/controller'
 import { exposeSetState, cancelState } from './state_exposer'
 import autoBind from 'react-autobind'
+import c from 'classnames'
 import { Mode } from './constants'
 import { CellState, AnnoState, FixedCell, History } from './states'
 import styles from './styles/numberplace.css'
@@ -41,8 +42,11 @@ class Numberplace extends React.Component {
   }
 
   render () {
+    let {
+      className
+    } = this.props
     return (
-      <div className={styles.wrap}>
+      <div className={c(styles.wrap, className)}>
         <Board />
         <Controller />
       </div>

@@ -15,10 +15,11 @@ for (let i = 0; i < 9; i++) {
 document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(
     <div>
-      <h2 className='title'>Numberplace DEMO</h2>
       <div className='wrap'>
         <div className='content'>
+          <h2 className='title'>Numberplace DEMO</h2>
           <Numberplace
+            className='game'
             gameData={gameData}
             onFinished={() => window.alert('FINISHED')}
           />
