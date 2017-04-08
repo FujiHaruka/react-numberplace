@@ -1,6 +1,5 @@
 import React from 'react'
 import { getState, setState } from '../../state_exposer'
-import { Mode } from '../../constants'
 import Annotation from './annotation'
 import c from 'classnames'
 import styles from '../../styles/cell.css'

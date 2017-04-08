@@ -2,39 +2,28 @@ import React from 'react'
 import c from 'classnames'
 import styles from '../../styles/buttons.css'
 import { getState, setState } from '../../state_exposer'
+import Actions from '../../helpers/actions'
 import { Mode } from '../../constants'
 import _ from 'lodash'
 
-const updateAnswer = (number) => () => {
+const updateAnswer = (value) => () => {
   let {
-    cellState,
     focusedCell
   } = getState()
   if (_.isEmpty(focusedCell)) {
     return
   }
-  setState({
-    cellState: cellState.update({
-      value: number,
-      ...focusedCell
-    })
-  })
+  Actions.putAnswer({ value, ...focusedCell })
 }
 
-const updateAnno = (number) => () => {
+const updateAnno = (value) => () => {
   let {
-    annoState,
     focusedCell
   } = getState()
   if (_.isEmpty(focusedCell)) {
     return
   }
-  setState({
-    annoState: annoState.add({
-      value: number,
-      ...focusedCell
-    })
-  })
+  Actions.addAnno({ value, ...focusedCell })
 }
 
 const NumberButton = ({ number, mode }) =>

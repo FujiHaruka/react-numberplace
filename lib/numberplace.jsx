@@ -4,7 +4,7 @@ import Controller from './components/controller'
 import { exposeSetState, cancelState } from './state_exposer'
 import autoBind from 'react-autobind'
 import { Mode } from './constants'
-import { CellState, AnnoState, FixedCell } from './states'
+import { CellState, AnnoState, FixedCell, History } from './states'
 import styles from './styles/numberplace.css'
 
 class Numberplace extends React.Component {
@@ -44,6 +44,7 @@ Numberplace.getInitialState = ({ gameData }) => ({
   focusedCell: {},
   focusedNumber: 0,
   mode: Mode.ANSWER,
+  history: new History(),
   cellState: new CellState(gameData),
   annoState: new AnnoState(),
   fixedCell: new FixedCell(gameData)
