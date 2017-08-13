@@ -10,43 +10,43 @@
 }
 
 .nomalColor {
-  color: rgb(100,77,190);
-  border: 1px solid rgb(100,77,190);
+  color: rgb(71,160,150);
+  border: 2px solid rgba(71,160,150,0.8);
 }
 
 .nomalColor:hover {
-  color: rgb(82,63,159);
-  border: 1px solid rgb(82,63,159);
-  background-color: rgba(82,63,159,0.05);
+  color: rgb(61,140,131);
+  border: 2px solid rgb(61,140,131);
+  background-color: rgba(61,140,131,0.05);
 }
 
 .nomalColor:active {
-  color: rgb(69,53,134);
-  border: 1px solid rgb(69,53,134);
-  background-color: rgba(69,53,134,0.1);
+  color: rgb(45,111,104);
+  border: 2px solid rgb(45,111,104);
+  background-color: rgba(45,111,104,0.1);
 }
 
 .annoColor {
   color: rgb(190,147,77);
-  border: 1px solid rgb(190,147,77);
+  border: 2px solid rgb(190,147,77);
 }
 
 .annoColor:hover {
   color: rgb(170,157,67);
-  border: 1px solid rgb(170,157,67);
+  border: 2px solid rgb(170,157,67);
   background-color: rgba(170,157,67,0.05);
 }
 
 .annoColor:active {
   color: rgb(150,137,57);
-  border: 1px solid rgb(150,137,57);
+  border: 2px solid rgb(150,137,57);
   background-color: rgba(150,137,57,0.1);
 }
 
 .annoActiveColor {
   color: white;
   background-color: rgb(190,147,77);
-  border: 1px solid rgb(190,147,77);
+  border: 2px solid rgb(190,147,77);
 }
 
 .action {
@@ -58,4 +58,5 @@
   border-radius: 3px;
   cursor: pointer;
   user-select: none;
+  margin: 0 8px;
 }

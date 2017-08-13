@@ -10,3 +10,11 @@
   width: 100%;
   padding-top: 0.3em;
 }
+
+.actionButtons {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 0.3em;
+}

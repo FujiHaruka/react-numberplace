@@ -1,7 +1,7 @@
 import React from 'react'
 import c from 'classnames'
 import styles from '../../styles/buttons.css'
-import { getState, setState } from '../../state_exposer'
+import { getState } from '../../state_exposer'
 import Actions from '../../helpers/actions'
 import { Mode } from '../../constants'
 import _ from 'lodash'
