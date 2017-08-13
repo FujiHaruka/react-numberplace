@@ -1,6 +1,5 @@
 const webpack = require('webpack')
 const { resolve } = require('path')
-const values = require('postcss-modules-values')
 const autoprefixer = require('autoprefixer')
 
 module.exports = {
@@ -19,7 +18,6 @@ module.exports = {
       test: /\.css$/,
       options: {
         postcss: [
-          values,
           autoprefixer
         ]
       }
@@ -41,7 +39,7 @@ module.exports = {
         test: /\.css$/,
         loaders: [
           'style-loader',
-          'css-loader?modules&importLoaders=1&localIdentName=[path]___[name]__[local]___[hash:base64:5]!postcss-loader'
+          'css-loader'
         ]
       }
     ]

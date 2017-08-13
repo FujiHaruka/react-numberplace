@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from '../styles/controller.css'
 import NumberButton from './controller/number_button'
 import DeleteButton from './controller/delete_button'
 import AnnoButton from './controller/anno_button'
@@ -15,15 +14,15 @@ class Controller extends React.Component {
       mode
     } = getState()
     return (
-      <div className={styles.wrap}>
-        <div className={styles.buttons}>
+      <div className={'rn-controller-wrap'}>
+        <div className={'rn-controller-buttons'}>
           {
             numbers.map(number =>
               <NumberButton number={number} key={number} mode={mode} />
             )
           }
         </div>
-        <div className={styles.actionButtons}>
+        <div className={'rn-controller-actionButtons'}>
           <UndoButton />
           <DeleteButton />
           <AnnoButton mode={mode} />

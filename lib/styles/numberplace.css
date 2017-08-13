@@ -1,4 +1,4 @@
-.wrap {
+.rn-numberplace-wrap {
   display: flex;
   flex-wrap: wrap;
   width: calc(13.5em + 6px);

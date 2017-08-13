@@ -1,4 +1,4 @@
-.number {
+.rn-buttons-number {
   font-size: 0.9em;
   width: 1.3em;
   height: 1.3em;
@@ -9,47 +9,47 @@
   user-select: none;
 }
 
-.nomalColor {
+.rn-buttons-nomalColor {
   color: rgb(71,160,150);
   border: 2px solid rgba(71,160,150,0.8);
 }
 
-.nomalColor:hover {
+.rn-buttons-nomalColor:hover {
   color: rgb(61,140,131);
   border: 2px solid rgb(61,140,131);
   background-color: rgba(61,140,131,0.05);
 }
 
-.nomalColor:active {
+.rn-buttons-nomalColor:active {
   color: rgb(45,111,104);
   border: 2px solid rgb(45,111,104);
   background-color: rgba(45,111,104,0.1);
 }
 
-.annoColor {
+.rn-buttons-annoColor {
   color: rgb(190,147,77);
   border: 2px solid rgb(190,147,77);
 }
 
-.annoColor:hover {
+.rn-buttons-annoColor:hover {
   color: rgb(170,157,67);
   border: 2px solid rgb(170,157,67);
   background-color: rgba(170,157,67,0.05);
 }
 
-.annoColor:active {
+.rn-buttons-annoColor:active {
   color: rgb(150,137,57);
   border: 2px solid rgb(150,137,57);
   background-color: rgba(150,137,57,0.1);
 }
 
-.annoActiveColor {
+.rn-buttons-annoActiveColor {
   color: white;
   background-color: rgb(190,147,77);
   border: 2px solid rgb(190,147,77);
 }
 
-.action {
+.rn-buttons-action {
   font-size: 0.7em;
   width: 4em;
   height: 1.6em;

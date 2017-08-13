@@ -1,6 +1,5 @@
 import React from 'react'
 import c from 'classnames'
-import styles from '../../styles/buttons.css'
 import { getState, setState } from '../../state_exposer'
 import { Mode } from '../../constants'
 
@@ -20,8 +19,8 @@ const toggleMode = () => {
 const AnnoButton = ({ mode }) =>
   <div
     className={c(
-      styles.action,
-      mode === Mode.ANSWER ? styles.annoColor : styles.annoActiveColor
+      'rn-buttons-action',
+      mode === Mode.ANSWER ? 'rn-buttons-annoColor' : 'rn-buttons-annoActiveColor'
     )}
     onClick={toggleMode}
     >

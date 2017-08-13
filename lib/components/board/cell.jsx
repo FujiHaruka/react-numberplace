@@ -2,7 +2,6 @@ import React from 'react'
 import { getState, setState } from '../../state_exposer'
 import Annotation from './annotation'
 import c from 'classnames'
-import styles from '../../styles/cell.css'
 import Table from '../misc/table'
 import _ from 'lodash'
 
@@ -32,7 +31,7 @@ const Cell = ({ sectionIdx, cellIdx }) => {
   }
   if (fixed) {
     return (
-      <div className={c(styles.wrap, styles.fixed)}>
+      <div className={c('rn-cell-wrap', 'rn-cell-fixed')}>
         { number }
       </div>
     )
@@ -40,15 +39,15 @@ const Cell = ({ sectionIdx, cellIdx }) => {
 
   return (
     <div
-      className={c(styles.wrap, isFocused && styles.focused)}
+      className={c('rn-cell-wrap', isFocused && 'rn-cell-focused')}
       onClick={setFocusedCell}
       >
       {
         number > 0
         ? number
         : <Table
-          wrapClass={styles.annoWrap}
-          rowClass={styles.row}
+          wrapClass={'rn-cell-annoWrap'}
+          rowClass={'rn-cell-row'}
           cellHandler={(i) =>
             <Annotation key={i} value={annos.has(i + 1) ? i + 1 : null} />
           }

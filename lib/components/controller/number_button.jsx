@@ -1,6 +1,5 @@
 import React from 'react'
 import c from 'classnames'
-import styles from '../../styles/buttons.css'
 import { getState } from '../../state_exposer'
 import Actions from '../../helpers/actions'
 import { Mode } from '../../constants'
@@ -29,8 +28,8 @@ const updateAnno = (value) => () => {
 const NumberButton = ({ number, mode }) =>
   <div
     className={c(
-      styles.number,
-      mode === Mode.ANSWER ? styles.nomalColor : styles.annoColor
+      'rn-buttons-number',
+      mode === Mode.ANSWER ? 'rn-buttons-nomalColor' : 'rn-buttons-annoColor'
     )}
     onClick={
       mode === Mode.ANSWER

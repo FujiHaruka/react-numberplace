@@ -1,4 +1,4 @@
-.wrap {
+.rn-section-wrap {
   display: flex;
   flex-wrap: nowrap;
   flex-direction: column;
@@ -6,7 +6,7 @@
   border-collapse: collapse;
 }
 
-.row {
+.rn-section-row {
   width: 100%;
   display: flex;
   flex-wrap: nowrap;

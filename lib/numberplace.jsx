@@ -6,7 +6,13 @@ import autoBind from 'react-autobind'
 import c from 'classnames'
 import { Mode } from './constants'
 import { CellState, AnnoState, FixedCell, History } from './states'
-import styles from './styles/numberplace.css'
+import './styles/numberplace.css'
+import './styles/annotation.css'
+import './styles/board.css'
+import './styles/buttons.css'
+import './styles/controller.css'
+import './styles/cell.css'
+import './styles/section.css'
 
 class Numberplace extends React.Component {
   constructor (props) {
@@ -46,7 +52,7 @@ class Numberplace extends React.Component {
       className
     } = this.props
     return (
-      <div className={c(styles.wrap, className)}>
+      <div className={c('rn-numberplace-wrap', className)}>
         <Board />
         <Controller />
       </div>

@@ -1,4 +1,4 @@
-.wrap {
+.rn-cell-wrap {
   width: 1.5em;
   height: 1.5em;
   line-height: 1.5em;
@@ -9,20 +9,20 @@
   text-align: center;
 }
 
-.annoWrap {
+.rn-cell-annoWrap {
   width: 100%;
 }
 
-.row {
+.rn-cell-row {
   width: 100%;
   display: flex;
   flex-wrap: nowrap;
 }
 
-.fixed {
+.rn-cell-fixed {
   font-weight: 700;
 }
 
-.focused {
+.rn-cell-focused {
   background-color: rgba(0,0,0,0.05);
 }

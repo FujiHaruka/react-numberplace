@@ -1,8 +1,7 @@
 import React from 'react'
-import styles from '../../styles/annotation.css'
 
 const Annotation = ({ value }) =>
-  <div className={styles.wrap}>
+  <div className='rn-annotation-wrap'>
     { value }
   </div>
 

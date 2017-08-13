@@ -1,11 +1,10 @@
 import React from 'react'
 import c from 'classnames'
-import styles from '../../styles/buttons.css'
 import Actions from '../../helpers/actions.js'
 
 const UndoButton = () =>
   <div
-    className={c(styles.action, styles.nomalColor)}
+    className={c('rn-buttons-action', 'rn-buttons-nomalColor')}
     onClick={Actions.undo}
     >
     Undo
