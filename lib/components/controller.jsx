@@ -4,28 +4,26 @@ import DeleteButton from './controller/delete_button'
 import AnnoButton from './controller/anno_button'
 import UndoButton from './controller/undo_button'
 import { Range } from 'immutable'
-import { getState } from '../state_exposer'
 
 const numbers = Range(1, 10).toJS()
 
 class Controller extends React.Component {
   render () {
-    let {
-      mode
-    } = getState()
+    const s = this
+    const {props} = s
     return (
       <div className={'rn-controller-wrap'}>
         <div className={'rn-controller-buttons'}>
           {
             numbers.map(number =>
-              <NumberButton number={number} key={number} mode={mode} />
+              <NumberButton number={number} key={number} {...props} />
             )
           }
         </div>
         <div className={'rn-controller-actionButtons'}>
-          <UndoButton />
-          <DeleteButton />
-          <AnnoButton mode={mode} />
+          <UndoButton {...props} />
+          <DeleteButton {...props} />
+          <AnnoButton {...props} />
         </div>
       </div>
     )

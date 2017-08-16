@@ -1,11 +1,11 @@
 import React from 'react'
 import c from 'classnames'
-import Actions from '../../helpers/actions.js'
+import {undoFactory} from '../../helpers/actionCreators'
 
-const UndoButton = () =>
+const UndoButton = ({cellState, annoState, history, onUpdate}) =>
   <div
     className={c('rn-buttons-action', 'rn-buttons-nomalColor')}
-    onClick={Actions.undo}
+    onClick={undoFactory({cellState, annoState, history, onUpdate})}
     >
     Undo
   </div>

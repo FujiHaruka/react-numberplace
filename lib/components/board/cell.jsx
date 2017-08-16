@@ -1,18 +1,11 @@
 import React from 'react'
-import { getState, setState } from '../../state_exposer'
 import Annotation from './annotation'
 import c from 'classnames'
 import Table from '../misc/table'
 import _ from 'lodash'
+import {focusCellFactory} from '../../helpers/actionCreators'
 
-const Cell = ({ sectionIdx, cellIdx }) => {
-  let {
-    cellState,
-    annoState,
-    fixedCell,
-    focusedCell
-    // mode
-  } = getState()
+const Cell = ({ sectionIdx, cellIdx, cellState, annoState, fixedCell, focusedCell, onUpdate }) => {
   let id = {
     sectionIdx,
     cellIdx
@@ -20,15 +13,6 @@ const Cell = ({ sectionIdx, cellIdx }) => {
   let number = cellState.get(id)
   let fixed = fixedCell.isFixed(id)
   let annos = annoState.get(id)
-  let isFocused = _.isEqual(focusedCell, id)
-  let setFocusedCell = () => {
-    setState({
-      focusedCell: {
-        cellIdx,
-        sectionIdx
-      }
-    })
-  }
   if (fixed) {
     return (
       <div className={c('rn-cell-wrap', 'rn-cell-fixed')}>
@@ -36,11 +20,16 @@ const Cell = ({ sectionIdx, cellIdx }) => {
       </div>
     )
   }
-
+  let isFocused = _.isEqual(focusedCell, id)
+  let focusCell = focusCellFactory({
+    cellIdx,
+    sectionIdx,
+    onUpdate
+  })
   return (
     <div
       className={c('rn-cell-wrap', isFocused && 'rn-cell-focused')}
-      onClick={setFocusedCell}
+      onClick={focusCell}
       >
       {
         number > 0
@@ -49,7 +38,10 @@ const Cell = ({ sectionIdx, cellIdx }) => {
           wrapClass={'rn-cell-annoWrap'}
           rowClass={'rn-cell-row'}
           cellHandler={(i) =>
-            <Annotation key={i} value={annos.has(i + 1) ? i + 1 : null} />
+            <Annotation
+              key={i}
+              value={annos.has(i + 1) ? i + 1 : null}
+            />
           }
           />
       }

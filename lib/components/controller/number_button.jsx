@@ -1,31 +1,9 @@
 import React from 'react'
 import c from 'classnames'
-import { getState } from '../../state_exposer'
-import Actions from '../../helpers/actions'
-import { Mode } from '../../constants'
-import _ from 'lodash'
+import {putAnswerFactory, addAnnoFactory} from '../../helpers/actionCreators'
+import {Mode} from '../../constants'
 
-const updateAnswer = (value) => () => {
-  let {
-    focusedCell
-  } = getState()
-  if (_.isEmpty(focusedCell)) {
-    return
-  }
-  Actions.putAnswer({ value, ...focusedCell })
-}
-
-const updateAnno = (value) => () => {
-  let {
-    focusedCell
-  } = getState()
-  if (_.isEmpty(focusedCell)) {
-    return
-  }
-  Actions.addAnno({ value, ...focusedCell })
-}
-
-const NumberButton = ({ number, mode }) =>
+const NumberButton = ({ number, mode, onUpdate, focusedCell, cellState, annoState, history }) =>
   <div
     className={c(
       'rn-buttons-number',
@@ -33,8 +11,20 @@ const NumberButton = ({ number, mode }) =>
     )}
     onClick={
       mode === Mode.ANSWER
-      ? updateAnswer(number)
-      : updateAnno(number)
+      ? putAnswerFactory({
+        value: number,
+        cell: focusedCell,
+        cellState,
+        history,
+        onUpdate
+      })
+      : addAnnoFactory({
+        value: number,
+        cell: focusedCell,
+        annoState,
+        history,
+        onUpdate
+      })
     }
     >
     { number }
