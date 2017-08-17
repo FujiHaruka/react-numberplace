@@ -15,7 +15,7 @@ import './styles/section.css'
 class NumberPlace extends React.PureComponent {
   componentDidUpdate (prevProps) {
     const s = this
-    const cellState = CellState.fromState(s.props.cellState)
+    const cellState = CellState.fromList(s.props.cellState)
     if (prevProps.cellState === cellState.state) {
       return
     }
@@ -33,10 +33,10 @@ class NumberPlace extends React.PureComponent {
       mode,
       onUpdate
     } = s.props
-    const cellState = CellState.fromState(s.props.cellState)
-    const annoState = AnnoState.fromState(s.props.annoState)
-    const history = History.fromState(s.props.history)
-    const fixedCell = FixedCell.fromState(s.props.fixedCell)
+    const cellState = CellState.fromList(s.props.cellState)
+    const annoState = AnnoState.fromList(s.props.annoState)
+    const history = History.fromList(s.props.history)
+    const fixedCell = FixedCell.fromList(s.props.fixedCell)
     const state = {
       focusedCell,
       mode,
